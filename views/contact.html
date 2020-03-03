@@ -1,0 +1,75 @@
+<include href="views/header.html">
+
+    <body class="newBody">
+
+    <!-- Title and Contact Info -->
+    <div class="jumbotron jumbotron-fluid" id="jumbotron1"></div>
+
+    <form method="get" action="#">
+
+        <!-- Block with fields -->
+        <div class="allElem m-5">
+
+            <div class="container mt-5">
+                <h1>Contact Us</h1>
+                <hr>
+            </div>
+
+            <div class="row">
+                <!-- Fields div -->
+                <div class="col mb-6 mt-5 ml-5">
+
+                    <!--First Name for Contact-->
+                    <label class="font-weight-bold">First Name</label>
+                    <input class="form-control" type="text" name="firstname" value="{{ @firstname }}">
+
+                    <check if="{{ @errors['firstname'] }}">
+                        <span class="alert alert-danger">{{ @errors['firstname'] }}</span><br>
+                    </check>
+
+                    <br>
+
+                    <!--Last Name for Contact-->
+                    <label class="font-weight-bold">Last Name</label>
+                    <input class="form-control" type="text" name="lastname" value="{{ @lastname }}">
+
+                    <check if="{{ @errors['lastname'] }}">
+                        <span class="alert alert-danger">{{ @errors['lastname'] }}</span><br>
+                    </check>
+                    <br>
+
+                    <!--Email for Contact-->
+                    <label class="font-weight-bold">Email</label>
+                    <input class="form-control" type="text" name="email" value="{{ @email }}">
+
+                    <check if="{{ @errors['email'] }}">
+                        <span class="alert">{{ @errors['email'] }}</span><br>
+                    </check>
+                    <br>
+
+                    <!--Message for Contact-->
+                    <label class="font-weight-bold" for="mesg">Message</label>
+                    <textarea class="form-control" id="mesg" rows="4" name="mesg"></textarea>
+
+
+                    <!-- Button div -->
+                    <div class="text-center mb-5 mr-5 mt-auto p-2">
+                        <input type="submit" class="btn btn-primary position-relative" value="Send">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
