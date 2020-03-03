@@ -23,5 +23,22 @@
         $GLOBALS['controller']->home();
     });
 
+    //Define an about us route
+    $f3->route('GET /about', function (){
+        $GLOBALS['controller']->about();
+    });
+
+    //Define an contact route
+    $f3->route('GET /contact', function (){
+        $GLOBALS['controller']->contact();
+    });
+
+    //Define an Schedule route
+    $f3->route('GET /schedule', function (){
+        $GLOBALS['controller']->schedule();
+    });
+
+
+
     //Run fat free
     $f3->run();

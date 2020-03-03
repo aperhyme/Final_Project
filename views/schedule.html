@@ -66,6 +66,33 @@
                     </div>
                     <br><br>
 
+
+                    <div class="form-group">
+                        <label for="email" class="font-weight-bold">Email</label><br>
+                        <check if="{{ @errors['email'] }}">
+                            <span class="err">{{ @errors['email'] }}</span>
+                        </check>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="joe@joes.com" value="{{ @email}}">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state" class="font-weight-bold">State</label><br>
+                        <select name="state" id="state" class="form-control">
+                            <option value ="none"> -- SELECT -- </option>
+                            <repeat group="{{ @states }}" value="{{ @state }}" >
+                                <option value="{{ @state }}"
+                                <check if = "{{ @state == @stateOption }}">
+                                    selected
+                                </check>
+                                >{{ @state }}
+                                </option>
+
+                                <br>
+                            </repeat>
+                        </select>
+                    </div>
+
                 </div>
 
                 <div class="col mt-4 d-flex align-items-end flex-column" role="alert">
