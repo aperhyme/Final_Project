@@ -18,4 +18,22 @@ class Controller
         $view = new Template();
         echo $view->render('views/home.html');
     }
+
+    public function about()
+    {
+        $view = new Template();
+        echo $view->render('views/about.html');
+    }
+
+    public function contact()
+    {
+        $view = new Template();
+        echo $view->render('views/contact.html');
+    }
+
+    public function schedule()
+    {
+        $view = new Template();
+        echo $view->render('views/schedule.html');
+    }
 }
