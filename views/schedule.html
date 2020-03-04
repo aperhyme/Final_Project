@@ -34,22 +34,6 @@
                         <span class="alert alert-danger">{{ @errors['lastname'] }}</span><br>
                     </check>
                     <br>
-                    <label class="font-weight-bold">Age</label>
-                    <input class="form-control" type="text" name="age" value="{{ @age }}">
-                    <br>
-                    <check if="{{ @errors['age'] }}">
-                        <span class="alert alert-danger">{{ @errors['age'] }}</span><br>
-                    </check>
-                    <br>
-
-                    <p class="font-weight-bold">Gender</p>
-                    <div class="form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="Male" value="Male">
-                        <label class="form-check-label mr-3" for="Male">Male</label>
-                        <input class="form-check-input" type="radio" name="gender" id="Female" value="Female">
-                        <label class="form-check-label" for="Female">Female</label>
-                    </div>
-                    <br><br>
 
                     <label class="font-weight-bold">Phone Number</label>
                     <input class="form-control" type="text" name="phone" value="{{ @phone }}">
@@ -59,14 +43,6 @@
                     </check>
                     <br>
 
-                    <p class="font-weight-bold">Premium Membership</p>
-                    <div class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="premium" id="premium" value="premium">
-                        <label class="form-check-label mr-3" for="premium">Sign me up for a Premium Account!</label>
-                    </div>
-                    <br><br>
-
-
                     <div class="form-group">
                         <label for="email" class="font-weight-bold">Email</label><br>
                         <check if="{{ @errors['email'] }}">
@@ -75,6 +51,31 @@
                         <input type="text" id="email" name="email" class="form-control" placeholder="joe@joes.com" value="{{ @email}}">
 
                     </div>
+                    <br>
+
+                    <label class="font-weight-bold">Street</label>
+                    <input class="form-control" type="text" name="street" value="{{ @street }}">
+                    <br>
+                    <check if="{{ @errors['street'] }}">
+                        <span class="alert alert-danger">{{ @errors['street'] }}</span><br>
+                    </check>
+                    <br>
+
+                    <label class="font-weight-bold">City</label>
+                    <input class="form-control" type="text" name="city" value="{{ @city }}">
+                    <br>
+                    <check if="{{ @errors['city'] }}">
+                        <span class="alert alert-danger">{{ @errors['city'] }}</span><br>
+                    </check>
+                    <br>
+
+                    <label class="font-weight-bold">Zip</label>
+                    <input class="form-control" type="text" name="zip" value="{{ @zip }}">
+                    <br>
+                    <check if="{{ @errors['zip'] }}">
+                        <span class="alert alert-danger">{{ @errors['zip'] }}</span><br>
+                    </check>
+                    <br>
 
                     <div class="form-group">
                         <label for="state" class="font-weight-bold">State</label><br>
@@ -92,6 +93,74 @@
                             </repeat>
                         </select>
                     </div>
+                    <br>
+
+                    <label class="font-weight-bold">Proposed Date of Shoot</label>
+                    <br>
+                        <input  class="form-control" type="date" id="shoot" name="shoot">
+                    <br>
+
+
+                    <label class="font-weight-bold">Type</label>
+                    <select class="form-control" name="type">
+                        <option value="none">Select Type of Photoshoot</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="family">Family</option>
+                        <option value="baby">Baby</option>
+                        <option value="individual">Individual</option>
+                    </select>
+                    <br>
+
+                    <label class="font-weight-bold">How Many Hours</label>
+                    <select class="form-control" name="type">
+                        <option value="none">Select Number of Hours</option>
+                        <option value="1-2">1-2 hours</option>
+                        <option value="3-4">3-4 hours</option>
+                        <option value="5-6">5-6 hours</option>
+                        <option value="7-8">7-8 hours</option>
+                    </select>
+
+                    <br>
+                    <label class="font-weight-bold">Location</label>
+                    <select class="form-control" name="location">
+                        <option value="none">Select a Location</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="studio">Studio</option>
+                        <option value="home">Home Shoot</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <br>
+                    <label class="font-weight-bold">How Many People</label>
+                    <select class="form-control" name="people">
+                        <option value="none">Select Number of People</option>
+                        <option value="single">Individual</option>
+                        <option value="small">2-5 People</option>
+                        <option value="medium">5-10 People</option>
+                        <option value="large">10-20 People</option>
+                        <option value="party">Wedding/Party</option>
+                    </select>
+
+                    <br>
+
+                    <label class="font-weight-bold">How did you hear about us?</label>
+                    <input class="form-control" type="text" name="hear">
+                    <br>
+
+                    <label class="font-weight-bold">Additional Information</label>
+                    <textarea class="form-control" type="text" name="additional"></textarea>
+                    <br>
+
+
+
+
+                    <p class="font-weight-bold">Agreement</p>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="agree" id="agree" value="agree">
+                        <label class="form-check-label mr-3" for="agree">I agree to the terms</label>
+                    </div>
+                    <br><br>
+
 
                 </div>
 
@@ -103,9 +172,9 @@
                     </div>
 
                     <!-- Button div -->
-                    <div class="text-right mb-5 mr-5 mt-auto p-2">
-                        <input type="submit" class="btn btn-primary position-relative" value="Next >">
-                    </div>
+<!--                    <div class="text-right mb-5 mr-5 mt-auto p-2">-->
+<!--                        <input type="submit" class="btn btn-primary position-relative" value="Next >">-->
+<!--                    </div>-->
                 </div>
             </div>
 
