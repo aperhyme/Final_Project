@@ -1,27 +1,116 @@
 <include href="views/header.html">
 
-<body class="newBody">
+
+    <style>
+        a{
+            color: black;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            height: 33.33%;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+    <body class="newBody">
+
+    <!-- Navigation bar -->
+    <nav class="navNew navbar navbar-expand-lg navbar-light bg-light">
+
+        <!-- Logotype -->
+        <a class="navbar-brand ml-4 m-1 menu" href="https://agrigorenko.greenriverdev.com/328/Final_Project/" >One Shot Photography</a>
+        <a class="navbar-brand ml-4 m-1 menu" href="schedule">Schedule Photo Shoot</a>
+        <a class="navbar-brand ml-4 m-1 menu" href="contact">Contact Us</a>
+    </nav>
 
     <!-- Title and Contact Info -->
     <div class="jumbotron jumbotron-fluid" id="jumbotron1"></div>
 
     <form>
 
-        <!-- Block with fields -->
-        <div class="allElem m-5">
+        <div class="container">
 
             <div class="container mt-5">
                 <h1>One Shot Photography</h1>
                 <hr>
+                <br><br>
             </div>
 
+            <!-- Wedding Phootshoot examples have to included description  -->
+            <a href="about"> <h2 class="mbr-fonts-style mb-4 text-center display-6">Wedding</h2> </a>
+            <div class="row">
+                <div class="column">
+                    <img src="images/weddingOne.jpeg" alt="Snow" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/wedding2.jpeg" alt="Forest" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/wedding3.jpeg" alt="Mountains" style="width:100%; height: 33.33%">
+                </div>
+            </div>
+            <br><br>
+
+            <!-- Family Phootshoot examples have to included description  -->
+            <a href="about"> <h2 class="mbr-fonts-style mb-4 text-center display-6">Family</h2> </a>
+            <div class="row">
+                <div class="column">
+                    <img src="images/family.jpeg" alt="Snow" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/family2.jpeg" alt="Forest" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/family3.jpeg" alt="Mountains" style="width:100%; height: 33.33%">
+                </div>
+            </div>
+
+            <br><br>
+
+            <!-- Baby Phootshoot examples have to included description  -->
+            <a href="about"> <h2 class="mbr-fonts-style mb-4 text-center display-6">Baby</h2> </a>
+            <div class="row">
+                <div class="column">
+                    <img src="images/baby1.jpeg" alt="Snow" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/baby2.jpeg" alt="Forest" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/baby3.jpeg" alt="Mountains" style="width:100%; height: 33.33%">
+                </div>
+            </div>
+
+            <br><br>
+
+            <!-- Individual Phootshoot examples have to included description  -->
+            <a href="about"> <h2 class="mbr-fonts-style mb-4 text-center display-6">Individual</h2> </a>
+            <div class="row">
+                <div class="column">
+                    <img src="images/person1.jpeg" alt="Snow" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/person3.jpeg" alt="Forest" style="width:100%; height: 33.33%">
+                </div>
+                <div class="column">
+                    <img src="images/person2.jpeg" alt="Mountains" style="width:100%; height: 33.33%">
+                </div>
+            </div>
+
+            <br><br>
+
         </div>
+
     </form>
-
-
-
-
-
 
 
 

@@ -1,8 +1,15 @@
 <include href="views/header.html">
 
+<body>
 
+<!-- Navigation bar -->
+<nav class="navNew navbar navbar-expand-lg navbar-light bg-light">
 
-<body class="newBody">
+    <!-- Logotype -->
+    <a class="navbar-brand ml-4 m-1 menu" href="https://agrigorenko.greenriverdev.com/328/Final_Project/" >One Shot Photography</a>
+    <a class="navbar-brand ml-4 m-1 menu" href="schedule">Schedule Photo Shoot</a>
+    <a class="navbar-brand ml-4 m-1 menu" href="contact">Contact Us</a>
+</nav>
 
     <!-- Title and Contact Info -->
     <div class="jumbotron jumbotron-fluid" id="jumbotron1"></div>
@@ -13,95 +20,56 @@
         <div class="allElem m-5">
 
             <div class="container mt-5">
-                <h1>Schedule Photoshoot </h1>
+                <h1>Request Schedule Photoshoot </h1>
                 <hr>
             </div>
 
             <div class="row">
                 <!-- Fields div -->
                 <div class="col mb-5 mt-5 ml-5">
+                    <!--   First Name   -->
                     <label class="font-weight-bold">First Name</label>
                     <input class="form-control" type="text" name="firstname" value="{{ @firstname }}">
-                    <br>
+
                     <check if="{{ @errors['firstname'] }}">
                         <span class="alert alert-danger">{{ @errors['firstname'] }}</span><br>
                     </check>
-                    <br>
-                    <label class="font-weight-bold">Last Name</label>
+
+                    <!--   Last Name  -->
+                    <label class="font-weight-bold mt-4">Last Name</label>
                     <input class="form-control" type="text" name="lastname" value="{{ @lastname }}">
-                    <br>
+
                     <check if="{{ @errors['lastname'] }}">
                         <span class="alert alert-danger">{{ @errors['lastname'] }}</span><br>
                     </check>
-                    <br>
 
-                    <label class="font-weight-bold">Phone Number</label>
+                    <!--    Phone Number    -->
+                    <label class="font-weight-bold mt-4">Phone Number</label>
                     <input class="form-control" type="text" name="phone" value="{{ @phone }}">
-                    <br>
+
                     <check if="{{ @errors['phone'] }}">
                         <span class="alert alert-danger">{{ @errors['phone'] }}</span><br>
                     </check>
-                    <br>
 
+                    <!--   Email   -->
                     <div class="form-group">
-                        <label for="email" class="font-weight-bold">Email</label><br>
+                        <label for="email" class="font-weight-bold mt-4">Email</label><br>
                         <check if="{{ @errors['email'] }}">
                             <span class="err">{{ @errors['email'] }}</span>
                         </check>
                         <input type="text" id="email" name="email" class="form-control" placeholder="joe@joes.com" value="{{ @email}}">
 
                     </div>
-                    <br>
 
-                    <label class="font-weight-bold">Street</label>
-                    <input class="form-control" type="text" name="street" value="{{ @street }}">
-                    <br>
-                    <check if="{{ @errors['street'] }}">
-                        <span class="alert alert-danger">{{ @errors['street'] }}</span><br>
-                    </check>
-                    <br>
-
-                    <label class="font-weight-bold">City</label>
+                    <!--City-->
+                    <label class="font-weight-bold mt-4">City</label>
                     <input class="form-control" type="text" name="city" value="{{ @city }}">
-                    <br>
+
                     <check if="{{ @errors['city'] }}">
                         <span class="alert alert-danger">{{ @errors['city'] }}</span><br>
                     </check>
-                    <br>
 
-                    <label class="font-weight-bold">Zip</label>
-                    <input class="form-control" type="text" name="zip" value="{{ @zip }}">
-                    <br>
-                    <check if="{{ @errors['zip'] }}">
-                        <span class="alert alert-danger">{{ @errors['zip'] }}</span><br>
-                    </check>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="state" class="font-weight-bold">State</label><br>
-                        <select name="state" id="state" class="form-control">
-                            <option value ="none"> -- SELECT -- </option>
-                            <repeat group="{{ @states }}" value="{{ @state }}" >
-                                <option value="{{ @state }}"
-                                <check if = "{{ @state == @stateOption }}">
-                                    selected
-                                </check>
-                                >{{ @state }}
-                                </option>
-
-                                <br>
-                            </repeat>
-                        </select>
-                    </div>
-                    <br>
-
-                    <label class="font-weight-bold">Proposed Date of Shoot</label>
-                    <br>
-                        <input  class="form-control" type="date" id="shoot" name="shoot">
-                    <br>
-
-
-                    <label class="font-weight-bold">Type</label>
+                    <label class="font-weight-bold mt-4">Type</label>
                     <select class="form-control" name="type">
                         <option value="none">Select Type of Photoshoot</option>
                         <option value="wedding">Wedding</option>
@@ -109,9 +77,9 @@
                         <option value="baby">Baby</option>
                         <option value="individual">Individual</option>
                     </select>
-                    <br>
 
-                    <label class="font-weight-bold">How Many Hours</label>
+
+                    <label class="font-weight-bold mt-4">How Many Hours</label>
                     <select class="form-control" name="type">
                         <option value="none">Select Number of Hours</option>
                         <option value="1-2">1-2 hours</option>
@@ -120,8 +88,8 @@
                         <option value="7-8">7-8 hours</option>
                     </select>
 
-                    <br>
-                    <label class="font-weight-bold">Location</label>
+
+                    <label class="font-weight-bold mt-4">Location</label>
                     <select class="form-control" name="location">
                         <option value="none">Select a Location</option>
                         <option value="outdoor">Outdoor</option>
@@ -130,37 +98,18 @@
                         <option value="other">Other</option>
                     </select>
 
-                    <br>
-                    <label class="font-weight-bold">How Many People</label>
-                    <select class="form-control" name="people">
-                        <option value="none">Select Number of People</option>
-                        <option value="single">Individual</option>
-                        <option value="small">2-5 People</option>
-                        <option value="medium">5-10 People</option>
-                        <option value="large">10-20 People</option>
-                        <option value="party">Wedding/Party</option>
-                    </select>
-
-                    <br>
-
-                    <label class="font-weight-bold">How did you hear about us?</label>
+                    <label class="font-weight-bold mt-4">How did you hear about us?</label>
                     <input class="form-control" type="text" name="hear">
-                    <br>
-
-                    <label class="font-weight-bold">Additional Information</label>
-                    <textarea class="form-control" type="text" name="additional"></textarea>
-                    <br>
 
 
+                    <label class="font-weight-bold mt-4">Additional Information</label>
+                    <textarea class="form-control" name="additional"></textarea>
 
 
-                    <p class="font-weight-bold">Agreement</p>
-                    <div class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="agree" id="agree" value="agree">
-                        <label class="form-check-label mr-3" for="agree">I agree to the terms</label>
+                    <!-- Button div-->
+                    <div class="text-center mb-5 mr-5 mt-auto p-2">
+                        <input type="submit" class="btn btn-primary position-relative" value="Submit">
                     </div>
-                    <br><br>
-
 
                 </div>
 
@@ -169,11 +118,6 @@
                         <p><strong>Note:</strong> All information entered is protected by our
                             <a href="#" class="card-link">privacy policy</a>. Profile information can only
                             be viewed by others with your permission.</p>
-                    </div>
-
-                    <!-- Button div-->
-                    <div class="text-center mb-5 mr-5 mt-auto p-2">
-                        <input type="submit" class="btn btn-primary position-relative" value="Submit">
                     </div>
                 </div>
             </div>
