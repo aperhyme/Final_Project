@@ -48,4 +48,13 @@ class Controller
         $view = new Template();
         echo $view->render('views/schedule.html');
     }
+
+    /**
+     * Schedule appointment page route
+     */
+    public function login()
+    {
+        $view = new Template();
+        echo $view->render('views/login.html');
+    }
 }
