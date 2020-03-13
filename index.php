@@ -51,11 +51,10 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
         $GLOBALS['controller']->schedule();
     });
 
-//Define an Schedule route
-$f3->route('GET /login', function (){
-    $GLOBALS['controller']->login();
-});
-
+    //Define an Schedule route
+    $f3->route('GET|POST /login', function (){
+        $GLOBALS['controller']->login();
+    });
 
 
     //Run fat free

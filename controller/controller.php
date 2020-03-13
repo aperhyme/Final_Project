@@ -55,6 +55,6 @@ class Controller
     public function login()
     {
         $view = new Template();
-        echo $view->render('views/login.html');
+        echo $view->render('views/login.php');
     }
 }
