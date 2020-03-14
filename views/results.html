@@ -24,6 +24,35 @@
             </div>
 
 
+            <fieldset class="form-group" id="mainPage">
+
+                <div class="row">
+                    <!-- table that creates containers to hold the information that was input
+                        in each of its on section-->
+                    <div class="col mb-5 mt-5 ml-5">
+                        <table class="table table-bordered customTable rounded-top">
+                            <tbody>
+                            <tr>
+                                <td>Name: {{ @SESSION.firstName }} {{ @SESSION.lastName }}</td>
+                            </tr>
+                            <tr>
+                                <td>Phone: {{ @SESSION.phone }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email: {{ @SESSION.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>State: {{ @SESSION.city }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </fieldset>
+
+
 
         </div>
 

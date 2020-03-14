@@ -59,15 +59,17 @@ class Controller
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
             $phone = $_POST['phone'];
+            $email = $_POST['email'];
 
             //Add data to hive
             $this->_f3->set('firstName', $firstName);
             $this->_f3->set('lastName', $lastName);
             $this->_f3->set('phone', $phone);
+            $this->_f3->set('email', $email);
 
 
             //If data is valid
-            if (validPersonal()) {
+            if (validSchedule()) {
 
                 //Redirect to profile page
                 $this->_f3->reroute('/results');
