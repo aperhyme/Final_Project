@@ -30,18 +30,18 @@
                 <div class="col mb-5 mt-5 ml-5">
                     <!--   First Name   -->
                     <label class="font-weight-bold">First Name</label>
-                    <input class="form-control" type="text" name="firstname" value="{{ @firstname }}">
+                    <input class="form-control" type="text" name="firstName" value="{{ @firstName }}">
 
-                    <check if="{{ @errors['firstname'] }}">
-                        <span class="alert alert-danger">{{ @errors['firstname'] }}</span><br>
+                    <check if="{{ @errors['firstName'] }}">
+                        <span class="alert alert-danger">{{ @errors['firstName'] }}</span><br>
                     </check>
 
                     <!--   Last Name  -->
                     <label class="font-weight-bold mt-4">Last Name</label>
-                    <input class="form-control" type="text" name="lastname" value="{{ @lastname }}">
+                    <input class="form-control" type="text" name="lastName" value="{{ @lastName }}">
 
-                    <check if="{{ @errors['lastname'] }}">
-                        <span class="alert alert-danger">{{ @errors['lastname'] }}</span><br>
+                    <check if="{{ @errors['lastName'] }}">
+                        <span class="alert alert-danger">{{ @errors['lastName'] }}</span><br>
                     </check>
 
                     <!--    Phone Number    -->

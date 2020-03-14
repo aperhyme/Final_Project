@@ -51,6 +51,11 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
         $GLOBALS['controller']->schedule();
     });
 
+    //Define a results route
+    $f3->route("GET|POST /results", function () {
+        $GLOBALS['controller']->results();
+    });
+
     //Define an Schedule route
     $f3->route('GET|POST /login', function (){
         $GLOBALS['controller']->login();
