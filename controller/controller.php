@@ -60,12 +60,14 @@ class Controller
             $lastName = $_POST['lastName'];
             $phone = $_POST['phone'];
             $email = $_POST['email'];
+            $type = $_POST['type'];
 
             //Add data to hive
             $this->_f3->set('firstName', $firstName);
             $this->_f3->set('lastName', $lastName);
             $this->_f3->set('phone', $phone);
             $this->_f3->set('email', $email);
+            $this->_f3->set('type', $type);
 
 
             //If data is valid
@@ -77,6 +79,7 @@ class Controller
                 $_SESSION['email'] = $email;
 
                 //Redirect to profile page
+                $_SESSION['type']->setType($type);
                 $this->_f3->reroute('/results');
             }
             else{
