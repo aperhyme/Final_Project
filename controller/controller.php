@@ -64,14 +64,23 @@ class Controller
             $lastName = $_POST['lastName'];
             $phone = $_POST['phone'];
             $email = $_POST['email'];
+            $city = $_POST['city'];
             $type = $_POST['type'];
+            $location = $_POST['location'];
+            $hear = $_POST['hear'];
+            $additional = $_POST['additional'];
 
             //Add data to hive
             $this->_f3->set('firstName', $firstName);
             $this->_f3->set('lastName', $lastName);
             $this->_f3->set('phone', $phone);
             $this->_f3->set('email', $email);
+            $this->_f3->set('city', $city);
             $this->_f3->set('type', $type);
+            $this->_f3->set('location', $location);
+            $this->_f3->set('hear', $hear);
+            $this->_f3->set('additional', $additional);
+
 
 
             //If data is valid

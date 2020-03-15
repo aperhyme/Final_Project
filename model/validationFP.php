@@ -8,6 +8,10 @@
  *
  */
 
+
+/**
+ * Validation for requesting schedule page
+ */
 function validSchedule()
 {
     global $f3;
@@ -44,6 +48,43 @@ function validSchedule()
 
 }
 
+/**
+ * Validation for contact us page
+ */
+
+function validContact()
+{
+    global $f3;
+    $isValid = true;
+
+    // validates the first name
+    if (!validFirst($f3->get('firstName'))) {
+
+        $isValid = false;
+        $f3->set("errors['firstName']", "Please enter first name");
+    }
+
+    // validates the last name
+    if (!validLast($f3->get('lastName'))) {
+
+        $isValid = false;
+        $f3->set("errors['lastName']", "Please enter last name");
+    }
+
+    // validates the email
+    if(!validEmail($f3->get('email'))){
+        $isValid = false;
+        $f3->set("errors['email']", "Please enter a valid email");
+    }
+
+    if(!validMessage($f3->get('mesg'))){
+        $isValid = false;
+        $f3->set("errors['mesg']", "Please enter a message");
+    }
+
+    return $isValid;
+}
+
 
 //validate first name
 function validFirst($firstName)
@@ -70,4 +111,11 @@ function validEmail($email)
 {
 
     return !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+// validate email
+function validMessage($mesg)
+{
+
+    return !empty($mesg);
 }
