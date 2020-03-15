@@ -1,7 +1,11 @@
 <?php
 
-
 /**
+ * Alex Grigorenko
+ * Eugene Mishkin
+ * 2/27/20
+ * /328/Final_Project/controller/controller.php
+ *
  * Class Controller routes to all the pages
  * @attribute $_f3 object
  *
@@ -105,11 +109,22 @@ class Controller
     }
 
     /**
-     * Schedule appointment page route
+     * login page route
      */
     public function login()
     {
         $view = new Template();
         echo $view->render('views/login.php');
     }
+
+    /**
+     * Admin summary page route
+     */
+    public function summary()
+    {
+        $view = new Template();
+        echo $view->render('views/summary.php');
+    }
+
+
 }

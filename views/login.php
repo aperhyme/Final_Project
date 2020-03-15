@@ -1,4 +1,9 @@
 <?php
+
+//Turn on error reporting
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 //Start a session
 session_start();
 
@@ -19,7 +24,7 @@ if(isset($_POST['submit'])) {
     $password = $_POST["password"];
 
     //If the username and password are correct
-    if (array_key_exists($username, $logins) && $logins["$username"] == $password) {
+    if (array_key_exists($username, $login) && $login["$username"] == $password) {
         //Store login name in a session variable
         $_SESSION['username'] = $username;
 

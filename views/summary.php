@@ -9,7 +9,7 @@ session_start();
 
 //If user is not logged in, reroute them to the login page
 if (!isset($_SESSION['username'])) {
-    header('location: login.php');
+    header('location: model/login.php');
 }
 
 include 'nav.php';
