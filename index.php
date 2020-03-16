@@ -66,6 +66,11 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
         $GLOBALS['controller']->summary();
     });
 
+    //Define an Contact summary route
+    $f3->route('GET|POST /contactSum', function (){
+        $GLOBALS['controller']->contactSum();
+    });
+
 
     //Run fat free
     $f3->run();

@@ -46,6 +46,44 @@ class Controller
      */
     public function contact()
     {
+
+        //If form has been submitted, validate
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            //Get data from form
+            $firstName = $_POST['firstName'];
+            $lastName = $_POST['lastName'];
+            $email = $_POST['email'];
+            $mesg = $_POST['mesg'];
+
+            //Add data to hive
+            $this->_f3->set('firstName', $firstName);
+            $this->_f3->set('lastName', $lastName);
+            $this->_f3->set('email', $email);
+            $this->_f3->set('mesg', $mesg);
+
+
+
+
+            //If data is valid
+            if (validSchedule()) {
+
+                $_SESSION['firstName'] = $firstName;
+                $_SESSION['lastName'] = $lastName;
+                $_SESSION['email'] = $email;
+                $_SESSION['mesg'] = $mesg;
+
+                //Redirect to profile page
+                $this->_f3->reroute('/contactSum');
+            }
+            else{
+                $this->_f3->set("errors['firstName']", "Please enter an first name");
+                $this->_f3->set("errors['lastName']", "Please enter an last name");
+                $this->_f3->set("errors['email']", "Please enter an email");
+                $this->_f3->set("errors['mesg']", "Please enter a message");
+            }
+        }
+
         $view = new Template();
         echo $view->render('views/contact.html');
     }
@@ -133,6 +171,15 @@ class Controller
     {
         $view = new Template();
         echo $view->render('views/summary.php');
+    }
+
+    /**
+     * Contact us summary page route
+     */
+    public function contactSum()
+    {
+        $view = new Template();
+        echo $view->render('views/contactSum.html');
     }
 
 
