@@ -66,7 +66,7 @@ class Controller
 
 
             //If data is valid
-            if (validSchedule()) {
+            if (validContact()) {
 
                 $_SESSION['firstName'] = $firstName;
                 $_SESSION['lastName'] = $lastName;
@@ -74,7 +74,7 @@ class Controller
                 $_SESSION['mesg'] = $mesg;
 
                 //Redirect to profile page
-                $this->_f3->reroute('/contactSum');
+                $this->_f3->reroute('/contactUs');
             }
             else{
                 $this->_f3->set("errors['firstName']", "Please enter an first name");

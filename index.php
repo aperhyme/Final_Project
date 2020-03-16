@@ -67,7 +67,7 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
     });
 
     //Define an Contact summary route
-    $f3->route('GET|POST /contactSum', function (){
+    $f3->route('GET|POST /contactUs', function (){
         $GLOBALS['controller']->contactSum();
     });
 
