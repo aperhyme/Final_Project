@@ -66,7 +66,7 @@ class Controller
 
 
             //If data is valid
-            if (validContact()) {
+           //if (validContact()) {
 
                 $_SESSION['firstName'] = $firstName;
                 $_SESSION['lastName'] = $lastName;
@@ -75,13 +75,13 @@ class Controller
 
                 //Redirect to profile page
                 $this->_f3->reroute('/contactUs');
-            }
-            else{
+            //}
+            //else{
                 $this->_f3->set("errors['firstName']", "Please enter an first name");
                 $this->_f3->set("errors['lastName']", "Please enter an last name");
                 $this->_f3->set("errors['email']", "Please enter an email");
                 $this->_f3->set("errors['mesg']", "Please enter a message");
-            }
+            //}
         }
 
         $view = new Template();
