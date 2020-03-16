@@ -42,12 +42,12 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
     });
 
     //Define an contact route
-    $f3->route('GET /contact', function (){
+    $f3->route('GET|POST /contact', function (){
         $GLOBALS['controller']->contact();
     });
 
     //Define an Schedule route
-    $f3->route('GET /schedule', function (){
+    $f3->route('GET|POST /schedule', function (){
         $GLOBALS['controller']->schedule();
     });
 

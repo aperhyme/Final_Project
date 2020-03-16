@@ -8,7 +8,7 @@
     <!-- Title and Contact Info -->
     <div class="jumbotron jumbotron-fluid" id="jumbotron1"></div>
 
-    <form method="get" action="#">
+    <form method="post" action="#">
 
         <!-- Block with fields -->
         <div class="allElem m-5">
@@ -24,20 +24,20 @@
 
                     <!--First Name for Contact-->
                     <label class="font-weight-bold">First Name</label>
-                    <input class="form-control" type="text" name="firstname" value="{{ @firstname }}">
+                    <input class="form-control" type="text" name="firstName" value="{{ @firstName }}">
 
-                    <check if="{{ @errors['firstname'] }}">
-                        <span class="alert alert-danger">{{ @errors['firstname'] }}</span><br>
+                    <check if="{{ @errors['firstName'] }}">
+                        <span class="alert alert-danger">{{ @errors['firstName'] }}</span><br>
                     </check>
 
                     <br>
 
                     <!--Last Name for Contact-->
                     <label class="font-weight-bold">Last Name</label>
-                    <input class="form-control" type="text" name="lastname" value="{{ @lastname }}">
+                    <input class="form-control" type="text" name="lastName" value="{{ @lastName }}">
 
-                    <check if="{{ @errors['lastname'] }}">
-                        <span class="alert alert-danger">{{ @errors['lastname'] }}</span><br>
+                    <check if="{{ @errors['lastName'] }}">
+                        <span class="alert alert-danger">{{ @errors['lastName'] }}</span><br>
                     </check>
                     <br>
 
@@ -53,6 +53,9 @@
                     <!--Message for Contact-->
                     <label class="font-weight-bold" for="mesg">Message</label>
                     <textarea class="form-control" id="mesg" rows="4" name="mesg"></textarea>
+                    <check if="{{ @errors['mesg'] }}">
+                        <span class="alert">{{ @errors['mesg'] }}</span><br>
+                    </check>
 
 
                     <!-- Button div -->

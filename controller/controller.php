@@ -94,8 +94,10 @@ class Controller
     public function schedule()
     {
 
+
         //If form has been submitted, validate
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
 
             //Get data from form
             $firstName = $_POST['firstName'];
@@ -122,7 +124,7 @@ class Controller
 
 
             //If data is valid
-            if (validSchedule()) {
+            //if (validSchedule()) {
 
                 $_SESSION['firstName'] = $firstName;
                 $_SESSION['lastName'] = $lastName;
@@ -130,15 +132,16 @@ class Controller
                 $_SESSION['email'] = $email;
 
                 //Redirect to profile page
-                $_SESSION['type']->setType($type);
-                $this->_f3->reroute('/results');
-            }
-            else{
+                //$_SESSION['type']->setType($type);
+               $this->_f3->reroute('/results');
+            //}
+            //else{
                 $this->_f3->set("errors['firstName']", "Please enter an first name");
                 $this->_f3->set("errors['lastName']", "Please enter an last name");
                 $this->_f3->set("errors['phone']", "Please enter an phone number");
                 $this->_f3->set("errors['email']", "Please enter an email");
-            }
+            //}
+
         }
 
         $view = new Template();
