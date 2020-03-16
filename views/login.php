@@ -1,42 +1,3 @@
-<?php
-
-//Turn on error reporting
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-//Start a session
-session_start();
-
-//If the user is already logged in
-if (isset($_SESSION['username'])) {
-    //Redirect to page 1
-    header('location: summary.php');
-}
-
-//If the login form has been submitted
-if(isset($_POST['submit'])) {
-    //Include creds.php (eventually, passwords should be moved to a secure location
-    //or stored in a database)
-    include ('model/creds.php');
-
-    //Get the username and password from the POST array
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    //If the username and password are correct
-    if (array_key_exists($username, $login) && $login["$username"] == $password) {
-        //Store login name in a session variable
-        $_SESSION['username'] = $username;
-
-        //Redirect to page 1
-        header('location: summary.php');
-    }
-
-    //Login credentials are incorrect
-    echo "<div class='form-group'><p class='alert-danger text-center p-2'>Invalid login</p></div>";
-}
-?>
-
 <include href="views/header.html">
 
     <body class="newBody">
@@ -44,38 +5,81 @@ if(isset($_POST['submit'])) {
     <!-- Navigation bar -->
     <include href="views/navbar.html">
 
-        <!-- Title and Contact Info -->
-        <div class="jumbotron jumbotron-fluid" id="jumbotron1"></div>
+    <div class="form-group m-5">
+        <h3 class="mb-2">Summary</h3>
+        <hr>
+        <br>
+        <?php
+        //Connect to db
+        require ('/controller/connect.php');
 
-            <form method="post" action="#">
+        //Define the query
+        $sql = 'SELECT s_id, fname, lname, phone, email, type, hours, location, hear, info
+                FROM schedule';
 
-                <div class="container">
+        //Send the query to the database
+        $result = mysqli_query($cnxn, $sql);
 
-                    <div class="container mt-5">
-                        <h1>Login</h1>
-                        <hr>
-                        <br><br>
-                    </div>
-                </div>
+        //var_dump();
+        ?>
 
-                <div class="container" id="main">
-                    <div class="row">
-                        <div class="col">
-                            <label>Username:</label>
-                            <input type="text" name="username" id="username" class="form-control">
-                            <br>
-                        </div>
+        <table id="member-table" class="display">
+            <thead>
+            <tr>
+                <th>Member id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Type</th>
+                <th>Hours</th>
+                <th>Location</th>
+                <th>How do you hear?</th>
+                <th>Additional info</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            //Print the results
+            while ($row = mysqli_fetch_assoc($result)) {
+                $member_id = $row['s_id'];
+                $fname = $row['fname'];
+                $lname = $row['lname'];
+                $phone = $row['phone'];
+                $email = $row['email'];
+                $type = $row['type'];
+                $hours = $row['hours'];
+                $location = $row['location'];
+                $hear = $row['hear'];
+                $info = $row['info'];
 
-                        <div class="col">
-                            <label>Password:</label>
-                            <input type="password" name="password" class="form-control">
-                            <br>
-                        </div>
+                echo "<tr>
+                                      <td>$member_id</td>
+                                      <td>$fname</td>
+                                      <td>$lname</td>
+                                      <td>$phone</td>
+                                      <td>$email</td>
+                                      <td>$type</td>
+                                      <td>$hours</td>
+                                      <td>$location</td>
+                                      <td>$hear</td>
+                                      <td>$info</td>
+                                  </tr>";
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
 
-                    </div>
 
-                    <input type="submit" name="submit" value="Submit" class="btn btn-primary">
-                </div>
-            </form>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="scripts/guestbook.js"></script>
+    <script>
+        $('#member-table').DataTable();
+    </script>
     </body>

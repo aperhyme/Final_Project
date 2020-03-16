@@ -44,7 +44,7 @@ class Controller
     /**
      * Contact Us page route
      */
-    public function contact()
+    public function contact($_f3)
     {
 
         //If form has been submitted, validate
@@ -57,10 +57,10 @@ class Controller
             $mesg = $_POST['mesg'];
 
             //Add data to hive
-            $this->_f3->set('firstName', $firstName);
-            $this->_f3->set('lastName', $lastName);
-            $this->_f3->set('email', $email);
-            $this->_f3->set('mesg', $mesg);
+            $_f3->set('firstName', $firstName);
+            $_f3->set('lastName', $lastName);
+            $_f3->set('email', $email);
+            $_f3->set('mesg', $mesg);
 
 
 
@@ -74,6 +74,7 @@ class Controller
                 $_SESSION['mesg'] = $mesg;
 
                 //Redirect to profile page
+<<<<<<< HEAD
                 $this->_f3->reroute('/contactUs');
             //}
             //else{
@@ -82,6 +83,16 @@ class Controller
                 $this->_f3->set("errors['email']", "Please enter an email");
                 $this->_f3->set("errors['mesg']", "Please enter a message");
             //}
+=======
+                $_f3->reroute('/contactUs');
+            }
+            else{
+                $_f3->set("errors['firstName']", "Please enter an first name");
+                $_f3->set("errors['lastName']", "Please enter an last name");
+                $_f3->set("errors['email']", "Please enter an email");
+                $_f3->set("errors['mesg']", "Please enter a message");
+            }
+>>>>>>> 9e9adbdecf303b58146be03d5d240f9c10da1586
         }
 
         $view = new Template();
@@ -91,7 +102,7 @@ class Controller
     /**
      * Schedule appointment page route
      */
-    public function schedule()
+    public function schedule($_f3)
     {
 
 
@@ -111,15 +122,15 @@ class Controller
             $additional = $_POST['additional'];
 
             //Add data to hive
-            $this->_f3->set('firstName', $firstName);
-            $this->_f3->set('lastName', $lastName);
-            $this->_f3->set('phone', $phone);
-            $this->_f3->set('email', $email);
-            $this->_f3->set('city', $city);
-            $this->_f3->set('type', $type);
-            $this->_f3->set('location', $location);
-            $this->_f3->set('hear', $hear);
-            $this->_f3->set('additional', $additional);
+            $_f3->set('firstName', $firstName);
+            $_f3->set('lastName', $lastName);
+            $_f3->set('phone', $phone);
+            $_f3->set('email', $email);
+            $_f3->set('city', $city);
+            $_f3->set('type', $type);
+            $_f3->set('location', $location);
+            $_f3->set('hear', $hear);
+            $_f3->set('additional', $additional);
 
 
 
@@ -132,6 +143,7 @@ class Controller
                 $_SESSION['email'] = $email;
 
                 //Redirect to profile page
+<<<<<<< HEAD
                 //$_SESSION['type']->setType($type);
                $this->_f3->reroute('/results');
             //}
@@ -142,6 +154,17 @@ class Controller
                 $this->_f3->set("errors['email']", "Please enter an email");
             //}
 
+=======
+                $_SESSION['type']->setType($type);
+                $_f3->reroute('/results');
+            }
+            else{
+                $_f3->set("errors['firstName']", "Please enter an first name");
+                $_f3->set("errors['lastName']", "Please enter an last name");
+                $_f3->set("errors['phone']", "Please enter an phone number");
+                $_f3->set("errors['email']", "Please enter an email");
+            }
+>>>>>>> 9e9adbdecf303b58146be03d5d240f9c10da1586
         }
 
         $view = new Template();

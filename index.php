@@ -42,6 +42,7 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
     });
 
     //Define an contact route
+<<<<<<< HEAD
     $f3->route('GET|POST /contact', function (){
         $GLOBALS['controller']->contact();
     });
@@ -49,11 +50,20 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
     //Define an Schedule route
     $f3->route('GET|POST /schedule', function (){
         $GLOBALS['controller']->schedule();
+=======
+    $f3->route('GET /contact', function ($f3){
+        $GLOBALS['controller']->contact($f3);
+    });
+
+    //Define an Schedule route
+    $f3->route('GET|POST /schedule', function ($f3){
+        $GLOBALS['controller']->schedule($f3);
+>>>>>>> 9e9adbdecf303b58146be03d5d240f9c10da1586
     });
 
     //Define a results route
-    $f3->route("GET|POST /results", function () {
-        $GLOBALS['controller']->results();
+    $f3->route("GET|POST /results", function ($f3) {
+        $GLOBALS['controller']->results($f3);
     });
 
     //Define an login route
@@ -62,8 +72,8 @@ $f3->set('states', array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California
     });
 
     //Define an summary route
-    $f3->route('GET|POST /summary', function (){
-        $GLOBALS['controller']->summary();
+    $f3->route('GET|POST /summary', function ($f3){
+        $GLOBALS['controller']->summary($f3);
     });
 
     //Define an Contact summary route
